@@ -1,0 +1,29 @@
+﻿@inject ProductService productService
+
+<h3>Sales Report</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Sales</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in productService.GetProducts())
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Sales.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="2">Total</th>
+            <th>@productService.GetProducts().Sum(p => p.Sales).ToString("C")</th>
+        </tr>
+    </tfoot>
+</table>

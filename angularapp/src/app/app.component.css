@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+mat-card-title {
+  margin-bottom: 1.5em;
+}
+
+mat-card {
+  margin-bottom: 1em;
+}
